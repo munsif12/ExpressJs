@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     font-family: century gothic;
+    transition: 1s ease-in-out;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 h2 {
@@ -17,7 +22,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(220deg, rgb(102, 120, 124), rgb(164, 164, 225));
+    background: linear-gradient(220deg, rgb(164, 164, 225), rgb(119, 230, 255));
     padding: 10px;
 }
 
@@ -25,6 +30,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 55px;
 }
 
 .btn1,
@@ -37,7 +43,7 @@ h2 {
     padding: 5px 12px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(312deg, rgb(166, 181, 184), rgb(148, 148, 172));
+    background: linear-gradient(312deg, rgb(104, 222, 245), rgb(148, 148, 172));
     color: white;
     font-size: 15px;
 }
@@ -49,6 +55,11 @@ img {
 
 .image {
     position: relative;
+    overflow: hidden;
+}
+
+.hover {
+    z-index: 99;
 }
 
 .msg {
@@ -58,13 +69,41 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
+    background: linear-gradient(rgba(211, 247, 247, 0), rgb(255, 209, 139));
+    transform: translateY(100%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 1s ease-in-out;
+    z-index: 97;
+    /* animation: munsif 2s linear; */
 }
 
 h5 {
     font-size: 4rem;
 }
 
-.hover:hover h5 {
-    font-size: 55px;
-    display: none;
+.image:hover .msg {
+    display: grid;
+    transform: translateY(0%);
+}
+
+.btn2:hover {
+    box-shadow: 0 6px 5px rgb(148, 148, 172);
+}
+
+@keyframes munsif {
+    0% {
+        transform: translateY(100%);
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+
 }

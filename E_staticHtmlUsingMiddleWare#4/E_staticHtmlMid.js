@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-//using express middle ware
+//using express middle ware only to server static files
 var absolutePath = path.join(__dirname, "/assets");
 app.use(express.static(absolutePath));
 
