@@ -16,6 +16,7 @@ h2 {
 
 .logo {
     color: #fff;
+    font-size: 1.6rem;
 }
 
 .nav {
@@ -81,7 +82,11 @@ img {
 }
 
 h5 {
-    font-size: 4rem;
+    font-size: 2rem;
+}
+
+span {
+    font-size: 1.2rem;
 }
 
 .image:hover .msg {
