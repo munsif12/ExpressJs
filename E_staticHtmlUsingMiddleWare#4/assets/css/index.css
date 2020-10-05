@@ -43,7 +43,7 @@ h2 {
 .btnStyle {
     padding: 5px 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     background: linear-gradient(312deg, rgb(104, 222, 245), rgb(148, 148, 172));
     color: white;
     font-size: 15px;
@@ -72,13 +72,14 @@ img {
     align-items: center;
     z-index: 999;
     background: linear-gradient(rgba(211, 247, 247, 0), rgb(255, 209, 139));
-    transform: translateY(100%);
+    transform: translate(100%);
     bottom: 0;
     left: 0;
     right: 0;
     transition: 1s ease-in-out;
     z-index: 97;
     /* animation: munsif 2s linear; */
+    overflow: hidden;
 }
 
 h5 {
@@ -91,7 +92,7 @@ span {
 
 .image:hover .msg {
     display: grid;
-    transform: translateY(0%);
+    transform: translate(0%);
 }
 
 .btn2:hover {
@@ -100,7 +101,7 @@ span {
 
 @keyframes munsif {
     0% {
-        transform: translateY(100%);
+        transform: translate(100%);
     }
 
     50% {
@@ -111,4 +112,25 @@ span {
         transform: translateY(100%);
     }
 
+}
+
+@media screen and (max-width: 480px) {
+
+    h5,
+    span {
+        font-size: 12px;
+    }
+
+    .navBtn {
+        margin-right: 8px;
+    }
+
+    .logo>p {
+        font-size: 12px;
+    }
+
+    .btnStyle {
+        padding: 2px 8px;
+        font-size: 12px;
+    }
 }
