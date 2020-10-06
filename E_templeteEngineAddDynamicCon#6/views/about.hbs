@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p> Express Middle ware</p>
+        </div>
+        <div class="navBtn">
+            <div class="btn1">
+                <button class="btnStyle" id="myButtonHome"
+                    onclick='window.location.href="http://localhost:8000/"'>Home</button>
+            </div>
+            <div class="btn2">
+                <button class="btnStyle active">About</button>
+            </div>
+            <div class="btn3">
+                <button class="btnStyle">{{name}}</button>
+                <!--to add dynamic data-->
+            </div>
+            <div class="btn4">
+                <button class="btnStyle">{{about}}</button>
+                <!--to add dynamic data-->
+            </div>
+        </div>
+    </div>
+    <div class="image">
+        <div class="hover">
+            <img src="css/animated-colorful-landscape-wallpaper.jpg" alt="nowrking">
+        </div>
+        <div class="msg">
+            <h5>Details...<br>1st :- <br> Serving Static html/css/js files using<br> express.static(folderName)
+                <br>Code:
+                <br><span>const app = express(); <br> var absolutePath = path.join(__dirname, "/assets"); <br>
+                    app.use(express.static(absolutePath));</span> <br> 2nd:- <br> using templete engine to display
+                dynamic data
+                <br>
+                <Code><span>app.get('/about', (req, res) => { <br>
+    res.render("about.hbs", {<br>
+        name: "Munsif",<br>
+        about: "Learning Express" <br>
+    }); <br>
+});</span></Code></h5>
+        </div>
+    </div>
+</body>
+<script src="js/index.js"></script>
+
+</html>
