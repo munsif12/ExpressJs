@@ -14,8 +14,9 @@ app.get("/", (req, res) => {
     res.send("Welcome! this is home page");
 });
 app.get('/services', (req, res) => {
-    res.write("<h2>this is home page </h2> ");
-    res.write("<h2>or is page ka maqsad ya ceck krna tha ka js ke static file kam krte h k nhi exporess ma.  </h2> ");
+    //res.write("<h1>this is contect page</h1>");
+    res.write('<h1 style="color:blue; text-align:center;">This is Services page</h1>');
+    res.write('<h3 style="text-align:center;">or is page ka maqsad ya check krna tha ka JavaScript k static files Express k live server ma kam karte h k nhi.</h3>');
     res.send();
 });
 // creating server to listen to the request 
