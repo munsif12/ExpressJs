@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: century gothic;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .common {
+            color: blue;
+            padding: 8px;
+            text-decoration: underline;
+        }
+
+        .popup {
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            height: 35px;
+            width: 200px;
+            animation: munsif 6s ease-in-out infinite;
+            padding: 5px;
+            border-radius: 8px;
+
+        }
+
+        @keyframes munsif {
+            0% {
+                margin-left: 20%;
+            }
+
+            50% {
+                margin-left: 60%;
+            }
+
+            100% {
+                margin-left: 20%;
+            }
+        }
+
+        @media screen and (max-width:380px) {
+            h2 {
+                font-size: 15px;
+            }
+
+            .popup {
+                height: 35px;
+                width: 150px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Hello this is <span class="common">{{pageName}} page.</span> <br> i am changing HBS
+        <span class="common">{{firstName}}</span>
+        folder name to
+        <span class="common">{{lastName}}</span> </h2>
+    <div class="popup">
+        <p>underline data are dynamic data.</p>
+    </div>
+</body>
+
+</html>
