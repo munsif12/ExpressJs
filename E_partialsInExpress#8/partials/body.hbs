@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="image">
+        <div class="hover">
+            <img src="css/animated-colorful-landscape-wallpaper.jpg" alt="nowrking">
+        </div>
+        <div class="msg">
+            <h5>Details...<br>Topic : Partials in Express <br> <span> partials are use to write less code like if we
+                    want to
+                    <br> use header of a page into 5 diffent pages so we have to copy the same header code <br> 5 times.
+                    but with partials we can just call the header part <br>
+                    to use header first create a folder called partials or anyname .
+                    and inside that folder create a file called header.hbs or any view engine extension u r using
+                    then copy the header code and paste it here.
+                    now call the header where ever you want inthe project</span>
+                <br>Code: <br><span>var hbs=require("hbs"); <br> var relPathPartials = path.join(__dirname,
+                    "/partials");<br>
+                    hbs.registerPartials(relPathPartials);</span>
+                <br>
+            </h5>
+        </div>
+    </div>
+</body>
+
+</html>
