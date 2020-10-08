@@ -6,8 +6,8 @@ const relPath = path.join(__dirname, '/assets');
 console.log(relPath);
 app.use(express.static(relPath));
 
-//toset the view engine like ( hbs ,pug, mustaches ) we are using => hbs
-app.set("view engine", "hbs");
+//to set the view engine like ( hbs ,pug, mustaches ) we are using => hbs
+app.set("view engine", "hbs");//"view engine","hbs" => spelling hasto be exact same
 app.get("/", (req, res) => {
     //render method will check for theviews folder in the root and then execute the index files
     /*  *** for displaying dynamic contect using hbs 
