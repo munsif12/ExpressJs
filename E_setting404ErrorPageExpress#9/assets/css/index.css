@@ -9,6 +9,12 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 h2 {
     color: #fff;
 
@@ -193,5 +199,6 @@ span {
     justify-content: center;
     align-items: center;
     background: linear-gradient(220deg, rgb(164, 164, 225), rgb(119, 230, 255));
+    margin-top: auto;
 
 }
