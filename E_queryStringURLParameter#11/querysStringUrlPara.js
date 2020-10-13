@@ -36,25 +36,6 @@ app.get("/about", (req, res) => {
 });
 app.get("/weather", (req, res) => {
     var temp;
-    if (req.query.cityName) {
-        requests(
-            `http://api.openweathermap.org/data/2.5/weather?q=${req.query.cityName}&appid=7428d86cddd52bb1813e331885cc6b27`
-        )
-            .on("data", (chunk) => {
-                const objdata = JSON.parse(chunk);
-                //converting object of js into array means (array of an object)
-                const wetArray = [objdata];
-                temp = wetArray[0].main.temp;
-                console.log(`city name is ${wetArray[0].name} and temp is ${wetArray[0].main.temp}`);
-            })
-            .on("end", (err) => {
-                if (err) {
-                    // res.end(err);
-                    return console.log('connection error' + err);
-                }
-                res.end();
-            });
-    }
     res.render("weather", {
         mainTopic: "Query string and API ",
         topic: "Query/weather",
