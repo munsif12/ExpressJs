@@ -1,6 +1,53 @@
 <div class="image">
-    <div class="hover">
-        <p style="position: absolute; color:white;">Check the console to see the result of available temperature</p>
-        <img src="css/weatherImage.jpg" alt="nowrking">
+    <form class="formCont">
+        <input type="text" name="location" id="location" placeholder="Enter your location...">
+        <input type="submit" id="submit" value="Submit">
+    </form>
+</div>
+{{!-- weather card --}}
+<div class="mainCont">
+    <div class="Date common">
+        <p class="datecs"></p>
     </div>
+    <div class="time common">
+        <p class="timecs"></p>
+    </div>
+    <div class="location common">
+        <p class="userLocation">Islamabad,PK</p>
+    </div>
+    <div class="wethCondIcon common" id="logoAnim">
+        <i style="color:#fff;transform: scale(6);" class="far fa-sun "></i>
+    </div>
+    <div class="wethTemp common">
+        <p>28&deg;</p>
+    </div>
+    <div class="weekDay common">
+        <p class="weekdaycs">Monday</p>
+    </div>
+    <div class="details common">
+        <div class="timelyInfo1 commonT">
+            <p>4am</p>
+            <i style="color:#fff" class="fas fa-cloud-meatball"></i>
+            <p>10&deg;</p>
+        </div>
+        <div class="timelyInfo2 commonT">
+            <p>4am</p>
+            <i style="color:#fff" class="fas fa-cloud-meatball"></i>
+            <p>10&deg;</p>
+        </div>
+        <div class="timelyInfo3 commonT">
+            <p>4am</p>
+            <i style="color:#fff" class="fas fa-cloud-meatball"></i>
+            <p>10&deg;</p>
+        </div>
+        <div class="timelyInfo4 commonT">
+            <p>4am</p>
+            <i style="color:#fff" class="fas fa-cloud-meatball"></i>
+            <p>10&deg;</p>
+        </div>
+    </div>
+    {{!-- image --}}
+    {{!-- <div class="hover">
+        <img src="css/weatherImage.jpg" alt="nowrking">
+    </div> --}}
 </div>
