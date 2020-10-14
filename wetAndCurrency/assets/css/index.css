@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: century gothic;
+    transition: 1s ease-in-out;
+}
+
+*::placeholder {
+    color: white;
+    font-size: 22px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("css/weatherImage.png");
+}
+
+h1 {
+    word-wrap: inherit;
+    top: 2%;
+    left: 7%;
+}
+
+h2 {
+    color: #fff;
+}
+
+.common {
+    color: blue;
+    text-shadow: 0 0 5px white;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(220deg, rgb(164, 164, 225), rgb(119, 230, 255));
+    padding: 10px;
+}
+
+.navBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 55px;
+}
+
+.btn1,
+.btn2,
+.btn3,
+.btn4 {
+    padding-left: 10px;
+}
+
+.btnStyle {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(312deg, rgb(104, 222, 245), rgb(148, 148, 172));
+    color: white;
+    font-size: 15px;
+}
+
+.active {
+    border-bottom: 2px solid white;
+}
+
+img {
+    height: 85vh;
+    width: 100vw;
+}
+
+.image {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.msg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(211, 247, 247, 0), rgb(255, 209, 139));
+    transform: translate(100%);
+    bottom: 1%;
+    left: 0;
+    right: 0;
+    transition: 1s ease-in-out;
+    z-index: 97;
+    /* animation: munsif 2s linear; */
+    overflow: hidden;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+span {
+    font-size: 1.2rem;
+}
+
+.image:hover .msg {
+    display: grid;
+
+    transform: translate(0%);
+}
+
+.image:hover h1 {
+    opacity: 0.1;
+}
+
+@keyframes munsif {
+    0% {
+        transform: translate(100%);
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    h5,
+    span {
+        font-size: 15px;
+    }
+
+    .navBtn {
+        margin-right: 12px;
+    }
+
+    .logo>p {
+        font-size: 15px;
+    }
+
+    .btnStyle {
+        padding: 3px 10px;
+        font-size: 15px;
+    }
+
+    .formCont #submit {
+        font-size: 15px;
+    }
+
+    *::placeholder {
+        color: white;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    h5,
+    span {
+        font-size: 12px;
+    }
+
+    .navBtn {
+        margin-right: 8px;
+    }
+
+    .logo>p {
+        font-size: 12px;
+    }
+
+    .btnStyle {
+        padding: 2px 8px;
+        font-size: 12px;
+    }
+
+    .formCont #submit {
+        font-size: 12px;
+    }
+
+    *::placeholder {
+        color: white;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    h5,
+    span {
+        font-size: 10px;
+    }
+
+    .navBtn {
+        margin-right: 6px;
+    }
+
+    .logo>p {
+        font-size: 10px;
+    }
+
+    .btnStyle {
+        padding: 1px 7px;
+        font-size: 10px;
+    }
+
+    .formCont #submit {
+        font-size: 10px;
+    }
+
+    *::placeholder {
+        color: white;
+        font-size: 10px;
+    }
+}
+
+.footer {
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(220deg, rgb(164, 164, 225), rgb(119, 230, 255));
+    margin-top: auto;
+}
+
+/* weather form styling */
+
+.formCont {
+    position: relative;
+    height: 6vh;
+    width: 55vw;
+    margin-top: 5px;
+    left: 23%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formCont input {
+    height: 5.7vh;
+    width: 75%;
+    border-radius: 8px;
+    outline: none;
+    background: linear-gradient(240deg, rgb(70, 175, 207) 35%, rgb(0, 212, 255) 100%);
+    text-align: center;
+    color: #000;
+    border: 2px solid white;
+}
+
+.formCont #submit {
+    height: 6.1vh;
+    width: 30%;
+    border-radius: 8px;
+    outline: none;
+    text-align: center;
+    color: white;
+    background: linear-gradient(240deg, rgb(70, 175, 207) 35%, rgb(0, 212, 255) 100%);
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* weather card styling */
+
+.mainCont {
+    height: 60vh;
+    width: 55vw;
+    /* border: 1px solid black; */
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    margin-top: 10%;
+    overflow: hidden;
+    border-radius: 20px;
+    /* background-color: rgb(70, 175, 207); */
+    background: linear-gradient(240deg, rgb(70, 175, 207) 35%, rgb(0, 212, 255) 100%);
+    box-shadow: 0px 0px 99px 9px rgba(0, 0, 0, 0.72);
+}
+
+.common {
+    color: white;
+    position: absolute;
+    /* margin: 1%; */
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    /* padding: 2%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.Date {
+    top: 0;
+}
+
+.datecs {
+    left: 20%;
+}
+
+.time {
+    top: 10%;
+}
+
+.location {
+    top: 20%;
+}
+
+.wethCondIcon {
+    height: 30%;
+    width: 100%;
+    top: 30%;
+    transition: 1s ease-in-out;
+    /* border: 1px solid black; */
+}
+
+#logoAnim {
+    animation: scaling 2s ease-in-out infinite;
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+.wethTemp {
+    height: 10%;
+    width: 100%;
+    top: 60%;
+}
+
+.weekDay {
+    height: 10%;
+    width: 100%;
+    top: 70%;
+}
+
+.details {
+    height: 20%;
+    width: 100%;
+    top: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 6%;
+    margin-left: 1%;
+}
+
+.mainCont>.common>p {
+    text-align: center
+}

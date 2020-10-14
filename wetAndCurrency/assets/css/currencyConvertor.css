@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: century gothic;
+    transition: 1s ease-in-out;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("css/weatherImage.png");
+}
+
+h2 {
+    text-align: center;
+    text-shadow: -4px 1px 13px rgba(77, 255, 102, 1);
+    color: gray;
+    border: 1px solid lightgreen;
+    padding: 12px;
+    border-radius: 22px;
+}
+
+.mainCont {
+    display: flex;
+    left: 0%;
+    position: relative;
+    height: 50vh;
+    width: 50%;
+    margin-top: 35px;
+    overflow: hidden;
+}
+
+.common {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    margin: 2%;
+    padding: 2%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0%;
+    height: 20% auto;
+    width: 90%;
+}
+
+.from {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    height: 20% auto;
+    width: 90%;
+}
+
+.to {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
+    height: 20% auto;
+    width: 90%;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 60%;
+    height: 20% auto;
+    width: 90%;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 78%;
+    height: 20% auto;
+    width: 90%;
+}
+
+label {
+    display: inline-block;
+    height: 1.5rem;
+    width: 4.5rem;
+    margin: 1%;
+    /* border: 1px solid green; */
+    padding: 1%;
+}
+
+select {
+    display: inline-block;
+    height: 80%;
+    width: 62%;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+}
+
+#button {
+    margin-right: 20%;
+    padding: 7px;
+    text-align: center;
+    margin-left: 20%;
+    width: 32%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: green;
+    word-spacing: 2px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom, #59DDA4, #ACAEB1);
+}
+
+input {
+    padding: 1%;
+    height: 35%;
+    width: 60%;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+}
+
+@media(max-width:375px) {
+    h2 {
+        margin-left: 15%;
+        font-size: 16px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input {
+        width: 70%;
+    }
+
+    #button {
+        font-size: 13px;
+    }
+}
