@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 const fs = require("fs");
-const requests = require("requests");
+const request = require('request');
 const app = express();
 const port = 8000;
 //setting up view engine
@@ -21,35 +21,31 @@ const setValues = (readFile, val) => {
     return returndata;
 }
 app.get("/", (req, res) => {
-    // res.render("foodNutri");
+
+    res.render("foodNutri", {
+        Enerc_Kcal: "22",
+        PROCNT: "11",
+        FAT: "19.3",
+        FIBTG: "4.02"
+    });
+    //API CALLING
     const options = {
-        "method": "GET",
-        "hostname": "rapidapi.p.rapidapi.com",
-        "port": null,
-        "path": `/parser?ingr=apple`,
-        "headers": {
-            "x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com",
-            "x-rapidapi-key": "1f98988481mshaf71d0b16041b35p14a73cjsn1e20a5387d6d",
-            "useQueryString": true
+        method: 'GET',
+        url: 'https://rapidapi.p.rapidapi.com/parser',
+        qs: { ingr: `${req.url.food}` },
+        headers: {
+            'x-rapidapi-host': 'edamam-food-and-grocery-database.p.rapidapi.com',
+            'x-rapidapi-key': '1f98988481mshaf71d0b16041b35p14a73cjsn1e20a5387d6d',
+            useQueryString: true
         }
     };
-    requests(options).on("data", function (chunk) {
-        const objdata = JSON.parse(chunk);
-        const wetArray = [objdata];
-        const apiData = wetArray.map(val => {
-            console.log(wetArray[0].parsed[0].nutrients.FAT);
-            settingValues(readFile, val)
-        }).join("");
-        res.write(apiData);
-    }).on("end", function () {
-        if (err) {
-            // res.end(err);
-            return console.log('connection error' + err);
-        }
-        res.end();
-    });
 
-    req.end();
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+    });
+    console.log(req.query.food);
 });
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
