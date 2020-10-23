@@ -5,9 +5,9 @@
                 alt="" srcset="">
         </div>
         <div class="userInput">
-            <form action="" method="post">
+            <form action="">
                 <input type="text" name="food" id="food" placeholder="Search Food ...">
-                <button id="submit" class="btn"><i class="fas fa-search"></i></button>
+                <button id="submit" type="submit" class="btn"><i class="fas fa-search"></i></button>
         </div>
         </form>
         <div class="inputImage">
@@ -16,24 +16,20 @@
         <div class="foodDetails">
             <h4>NURTITIONS :-</h4>
             <div class="Enerc_Kcal">
-                <p style="font-size: 12px;" class="Enerc_Kcal">Enerc_Kcal</p>
-                <p class="Enerc_Kcal">23</p>
+                <p style="font-size: 12px;" class="tEnerc_Kcal">Enerc_Kcal</p>
+                <p class="nEnerc_Kcal">{{Enerc_Kcal}}</p>
             </div>
             <div class="PROCNT">
-                <p style="font-size: 12px;" class="PROCNT">PROCNT</p>
-                <p class="PROCNT">232</p>
+                <p style="font-size: 12px;" class="tPROCNT">PROCNT</p>
+                <p class="nPROCNT">{{PROCNT}}</p>
             </div>
             <div class="FAT">
-                <p style="font-size: 12px;" class="FAT">FAT</p>
-                <p class="FAT">{{%FAT%}}</p>
+                <p style="font-size: 12px;" class="tFAT">FAT</p>
+                <p class="nFAT">{{FAT}}</p>
             </div>
-            <!-- <div class="CHOCDF">
-                    <p style="font-size: 12px;" class="NOCrecentDeathsTitle">CHOCDF</p>
-                    <p class="NOCrecentDeaths">2</p>
-                </div> -->
             <div class="FIBTG">
-                <p style="font-size: 12px;" class="NOCtotalTestsTitle">FIBTG</p>
-                <p class="NOCtotalTests">3</p>
+                <p style="font-size: 12px;" class="tFIBTG">FIBTG</p>
+                <p class="nFIBTG">{{FIBTG}}</p>
             </div>
         </div>
     </div>
