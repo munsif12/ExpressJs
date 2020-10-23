@@ -3,6 +3,7 @@ const path = require("path");
 const hbs = require("hbs");
 const fs = require("fs");
 const request = require('request');
+const { json } = require("express");
 const app = express();
 const port = 8000;
 //setting up view engine
@@ -20,32 +21,39 @@ const setValues = (readFile, val) => {
     let returndata = readFile.replace("{%FAT%}", (val[0].parsed[0].nutrients.FAT));
     return returndata;
 }
+var test = document.querySelector("#submit");
 app.get("/", (req, res) => {
-
-    res.render("foodNutri", {
-        Enerc_Kcal: "22",
-        PROCNT: "11",
-        FAT: "19.3",
-        FIBTG: "4.02"
-    });
-    //API CALLING
-    const options = {
-        method: 'GET',
-        url: 'https://rapidapi.p.rapidapi.com/parser',
-        qs: { ingr: `${req.url.food}` },
-        headers: {
-            'x-rapidapi-host': 'edamam-food-and-grocery-database.p.rapidapi.com',
-            'x-rapidapi-key': '1f98988481mshaf71d0b16041b35p14a73cjsn1e20a5387d6d',
-            useQueryString: true
-        }
-    };
-
-    request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-
-        console.log(body);
-    });
+    var data;
     console.log(req.query.food);
+    console.log(test);
+    if (req.query.food) {
+        const options = {
+            method: 'GET',
+            url: 'https://rapidapi.p.rapidapi.com/parser',
+            qs: { ingr: `${req.query.food}` },
+            headers: {
+                'x-rapidapi-host': 'edamam-food-and-grocery-database.p.rapidapi.com',
+                'x-rapidapi-key': '1f98988481mshaf71d0b16041b35p14a73cjsn1e20a5387d6d',
+                useQueryString: true
+            }
+        };
+
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+            var useableData = JSON.parse(body);
+            data = [useableData];
+        });
+    }
+    //API CALLING
+    else {
+        res.render("foodNutri", {
+            Enerc_Kcal: `${data[0].parsed[0].food.nutrients.Enerc_Kcal}`, //${data[0].parsed[0].food.uri.nutrients}
+            PROCNT: `${data[0].parsed[0].food.nutrients.PROCNT}`,
+            FAT: `${data[0].parsed[0].food.nutrients.FAT}`,
+            FIBTG: `${data[0].parsed[0].food.nutrients.FIBTG}`
+        });
+    }
+
 });
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
