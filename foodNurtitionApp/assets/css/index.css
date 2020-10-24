@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(235deg, rgb(237, 195, 195), white)
+    background: linear-gradient(235deg, rgb(253, 253, 253), rgb(22, 21, 21));
 }
 
 .foodNutApp {
