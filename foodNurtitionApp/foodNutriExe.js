@@ -16,18 +16,12 @@ hbs.registerPartials(path.join(__dirname, "/partials"));
 //Loading static files
 app.use(express.static(path.join(__dirname, "/assets")));
 //reading file
-const readFile = fs.readFileSync(`${pathViews}/foodNutri.hbs`, "utf-8");
-const setValues = (readFile, val) => {
-    let returndata = readFile.replace("{%FAT%}", (val[0].parsed[0].nutrients.FAT));
-    return returndata;
-}
-var test = document.querySelector("#submit");
+const readFile = fs.readFileSync(`${__dirname}/partials/body.hbs`, "utf-8");
+//console.log(readFile);
 app.get("/", (req, res) => {
     var data;
-    console.log(req.query.food);
-    console.log(test);
     if (req.query.food) {
-        const options = {
+        const url = {
             method: 'GET',
             url: 'https://rapidapi.p.rapidapi.com/parser',
             qs: { ingr: `${req.query.food}` },
@@ -38,21 +32,26 @@ app.get("/", (req, res) => {
             }
         };
 
-        request(options, function (error, response, body) {
+        request(url, function (error, response, body) {
             if (error) throw new Error(error);
             var useableData = JSON.parse(body);
             data = [useableData];
+            console.log(data[0].parsed[0].food.nutrients);
+            console.log(data[0].parsed[0].food.image);
+            // console.log(readFile.replace("{%PROCNT%}", (data[0].parsed[0].food.nutrients.Enerc_Kcal)));
+            // readFile.replace("{%PROCNT%}", (data[0].parsed[0].food.nutrients.Enerc_Kcal));
+            res.render("foodNutri", {
+                uri: `${data[0].parsed[0].food.image}`,
+                Enerc_Kcal: `${data[0].parsed[0].food.nutrients.ENERC_KCAL}`, //${data[0].parsed[0].food.uri.nutrients}
+                PROCNT: `${data[0].parsed[0].food.nutrients.PROCNT}`,
+                FAT: `${data[0].parsed[0].food.nutrients.FAT}`,
+                FIBTG: `${data[0].parsed[0].food.nutrients.FIBTG}`
+            });
         });
+
     }
     //API CALLING
-    else {
-        res.render("foodNutri", {
-            Enerc_Kcal: `${data[0].parsed[0].food.nutrients.Enerc_Kcal}`, //${data[0].parsed[0].food.uri.nutrients}
-            PROCNT: `${data[0].parsed[0].food.nutrients.PROCNT}`,
-            FAT: `${data[0].parsed[0].food.nutrients.FAT}`,
-            FIBTG: `${data[0].parsed[0].food.nutrients.FIBTG}`
-        });
-    }
+
 
 });
 app.listen(port, () => {
