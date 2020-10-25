@@ -41,11 +41,12 @@ app.get("/", (req, res) => {
             // console.log(readFile.replace("{%PROCNT%}", (data[0].parsed[0].food.nutrients.Enerc_Kcal)));
             // readFile.replace("{%PROCNT%}", (data[0].parsed[0].food.nutrients.Enerc_Kcal));
             res.render("foodNutri", {
-                uri: `${data[0].parsed[0].food.image}`,
+                imageUrl: `${data[0].parsed[0].food.image}`,
+                lable: `${data[0].parsed[0].food.label}`,
                 Enerc_Kcal: `${data[0].parsed[0].food.nutrients.ENERC_KCAL}`, //${data[0].parsed[0].food.uri.nutrients}
                 PROCNT: `${data[0].parsed[0].food.nutrients.PROCNT}`,
                 FAT: `${data[0].parsed[0].food.nutrients.FAT}`,
-                FIBTG: `${data[0].parsed[0].food.nutrients.FIBTG}`
+                CHOCDF: `${data[0].parsed[0].food.nutrients.CHOCDF}`
             });
         });
 
