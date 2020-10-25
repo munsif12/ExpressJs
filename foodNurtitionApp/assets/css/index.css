@@ -8,7 +8,7 @@
     text-align: center;
     color: white;
     font-weight: lighter;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .centerDiv {
@@ -74,6 +74,8 @@ form {
     text-align: center;
     color: #fff;
     background: transparent;
+    font-size: 1.2rem;
+    line-height: 1rem;
 }
 
 .userInput #submit {
@@ -105,13 +107,17 @@ form {
     background: black;
     color: white;
     line-height: 22px;
+    border-radius: 10px;
 }
 
 h4 {
     position: absolute;
-    top: 20%;
+    top: 16%;
     left: 3%;
     color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 .foodDetails {
@@ -136,7 +142,7 @@ h4 {
     width: 100%;
     margin: 5px;
     /* box-shadow: 1px 1px 2px 0px rgba(199, 200, 207, 1); */
-    box-shadow: 0px 0px 10px -2px rgb(226, 227, 233);
+    box-shadow: 0px 0px 6px -2px rgb(226, 227, 233);
     color: white;
     margin-top: 45px;
     border-radius: 8px;
